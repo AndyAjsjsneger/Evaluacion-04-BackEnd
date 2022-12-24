@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block contenido %}
+    <div class="display-1 text-center">Equipos del Mundial</div>
+    <br><br><br><br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre de Pais</th>
+                <th>Año de creacion</th>
+                <th>¿Gano el mundial de Qatar 2022?</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for Equipo in equipo %}
+            <tr>
+                <td>{{ Equipo.nombre}}</td>
+                <td>{{ Equipo.anio_creacion}}</td>
+                {% if Equipo.campeon %}
+                <td>Si</td>
+                {% else %}
+                <td>No</td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>    
+{% endblock %}

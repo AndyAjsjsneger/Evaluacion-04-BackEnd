@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block contenido %}
+    <div class="display-1 text-center">
+        <span>{{ equipo.nombre }}</span><br>
+        <span>{{ equipo.anio_creacion }}</span><br>
+        {% if equipo.campeon == 1 %}      
+            <img src="{% static 'image/paisCampeon.jpg' %}">
+        {% else %} 
+            <img src="{% static 'image/paisEliminado.jpg' %}">
+        {% endif %}
+    </div>
+{% endblock %}
